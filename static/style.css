@@ -1,0 +1,297 @@
+/* ============================================================
+   CoolWatch – Custom Stylesheet
+   Stack: Bootstrap 5 base + these overrides
+   ============================================================ */
+
+/* ---------- Google Font ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --cw-primary:    #2563eb;   /* brand blue */
+  --cw-primary-dk: #1d4ed8;
+  --cw-accent:     #f97316;   /* warm orange */
+  --cw-success:    #16a34a;
+  --cw-surface:    #f8fafc;
+  --cw-card-bg:    #ffffff;
+  --cw-border:     #e2e8f0;
+  --cw-text:       #1e293b;
+  --cw-muted:      #64748b;
+  --cw-header-bg:  linear-gradient(135deg, #1e3a8a 0%, #2563eb 60%, #0ea5e9 100%);
+  --cw-radius:     12px;
+  --cw-shadow:     0 4px 24px rgba(37,99,235,0.10);
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--cw-surface);
+  color: var(--cw-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; }
+
+/* ---------- Header ---------- */
+.cw-header {
+  background: var(--cw-header-bg);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+
+.cw-logo-wrap {
+  width: 54px;
+  height: 54px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cw-logo-icon {
+  font-size: 1.9rem;
+  color: #fde68a;   /* warm amber glow */
+}
+
+.cw-title {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+.cw-subtitle {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.75);
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+
+/* ---------- Info Banner ---------- */
+.cw-info-banner {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+  border-radius: var(--cw-radius);
+}
+
+/* ---------- Cards ---------- */
+.cw-card {
+  background: var(--cw-card-bg);
+  border: 1px solid var(--cw-border);
+  border-radius: var(--cw-radius);
+  box-shadow: var(--cw-shadow);
+  overflow: hidden;
+}
+
+.cw-card-header {
+  background: linear-gradient(90deg, #f1f5f9, #e2e8f0);
+  border-bottom: 1px solid var(--cw-border);
+  font-weight: 600;
+  font-size: 0.93rem;
+  color: var(--cw-text);
+  padding: 0.85rem 1.25rem;
+}
+
+/* ---------- Form labels ---------- */
+.cw-label {
+  font-weight: 500;
+  font-size: 0.88rem;
+  color: var(--cw-text);
+  margin-bottom: 0.3rem;
+}
+
+/* ---------- Inputs ---------- */
+.cw-input {
+  border-radius: 8px 0 0 8px !important;
+  border-color: var(--cw-border);
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cw-input:focus {
+  border-color: var(--cw-primary);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+  outline: none;
+}
+
+.input-group-text {
+  background: #f1f5f9;
+  border-color: var(--cw-border);
+  color: var(--cw-muted);
+  font-weight: 500;
+  font-size: 0.85rem;
+  min-width: 48px;
+  justify-content: center;
+  border-radius: 0 8px 8px 0 !important;
+}
+
+/* ---------- Buttons ---------- */
+.cw-btn-primary {
+  background: var(--cw-primary);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.55rem 1.2rem;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.25);
+}
+
+.cw-btn-primary:hover {
+  background: var(--cw-primary-dk);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(37,99,235,0.35);
+  color: #fff;
+}
+
+.cw-btn-primary:active { transform: translateY(0); }
+
+.cw-btn-secondary {
+  background: #f1f5f9;
+  border: 1px solid var(--cw-border);
+  color: var(--cw-text);
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  transition: background 0.2s;
+}
+
+.cw-btn-secondary:hover { background: #e2e8f0; }
+
+/* ---------- Error Alert ---------- */
+.cw-error-alert {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  border-radius: var(--cw-radius);
+  font-size: 0.9rem;
+}
+
+/* ---------- Metric Boxes ---------- */
+.cw-metric-box {
+  border-radius: 10px;
+  padding: 1rem 0.75rem;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: transform 0.2s;
+}
+
+.cw-metric-box:hover { transform: translateY(-2px); }
+
+.cw-metric-blue  { background: #eff6ff; border-color: #bfdbfe; }
+.cw-metric-orange{ background: #fff7ed; border-color: #fed7aa; }
+.cw-metric-green { background: #f0fdf4; border-color: #bbf7d0; }
+
+.cw-metric-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--cw-muted);
+  margin-bottom: 0.35rem;
+}
+
+.cw-metric-value {
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.cw-metric-blue   .cw-metric-value  { color: var(--cw-primary); }
+.cw-metric-orange .cw-metric-value  { color: #c2410c; }
+.cw-metric-green  .cw-metric-value  { color: var(--cw-success); }
+
+.cw-metric-unit {
+  font-size: 0.75rem;
+  color: var(--cw-muted);
+  margin-top: 0.2rem;
+}
+
+/* ---------- Equation Box ---------- */
+.cw-equation-box {
+  background: #0f172a;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+
+.cw-eq-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.cw-eq-formula {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.3px;
+}
+
+.cw-eq-filled {
+  font-size: 0.88rem;
+  color: #fde68a;
+  font-family: 'Courier New', monospace;
+  word-break: break-word;
+}
+
+/* ---------- Explanation ---------- */
+.cw-explanation {
+  background: #f8fafc;
+  border-left: 4px solid var(--cw-primary);
+  border-radius: 0 8px 8px 0;
+  padding: 0.85rem 1rem;
+  font-size: 0.88rem;
+  color: var(--cw-text);
+  line-height: 1.7;
+}
+
+/* ---------- Chart Canvas ---------- */
+#coolingChart { display: block; width: 100% !important; }
+
+/* ---------- Footer ---------- */
+.cw-footer {
+  background: #1e293b;
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
+
+/* ---------- Fade-in animation for results ---------- */
+@keyframes cwFadeIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cw-fade-in { animation: cwFadeIn 0.4s ease both; }
+
+/* ---------- Loading spinner on button ---------- */
+.cw-spinning {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 575px) {
+  .cw-title   { font-size: 1.25rem; }
+  .cw-metric-value { font-size: 1.15rem; }
+}
